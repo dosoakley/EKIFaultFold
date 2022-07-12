@@ -1,5 +1,5 @@
 # EKIFaultFold
-Three-dimensional modelling of fault-related deformation with Ensemble Kalman Inversion
+Three-dimensional, multi-fault modelling of fault-related deformation with Ensemble Kalman Inversion
 
 This program uses Ensemble Kalman Inversion (EKI) and a three-dimensional kinematic model (Georgsen et al., 2012, Fault displacement modelling using 3D vector fields) to build three-dimensional models of geologic structures, which can include multiple faults and complex fault geometries and distributions of slip on the faults.
 
