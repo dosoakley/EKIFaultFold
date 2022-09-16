@@ -117,7 +117,7 @@ if opt.fit_horizons>0
                     trend = restored_depths(i)+slopes(1)*x+slopes(2)*y+fault_block_offsets(j);
                 else
                     ind_start_lasti = (i-2)*sum(info.n_horiz_pts_block)+sum(info.n_horiz_pts_block(1:j-1))+1;
-                    trend = horiz_params(ind_start_lasti:ind_start_lasti+info.n_horiz_pts_block(j)-1)+thicknesses(i-1)+fault_block_offsets(j); %Previous horizon plus expected thickness.
+                    trend = horiz_params(ind_start_lasti:ind_start_lasti+info.n_horiz_pts_block(j)-1)+thicknesses(i-1); %Previous horizon plus expected thickness.
                 end
                 if opt.fit_horizons_residuals
                     ind_start = nparams_part+(i-1)*sum(info.n_horiz_pts_block)+sum(info.n_horiz_pts_block(1:j-1))+1;
