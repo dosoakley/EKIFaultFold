@@ -10,7 +10,7 @@ cmap = 'jet';
 
 folder = 'DMCBootInflSigma06_Results';
 N = 200;
-load(['.\',folder,'\N',num2str(N),'_forward.mat'],'params_final_raw','info','opt')
+load(['./',folder,'/N',num2str(N),'_forward.mat'],'params_final_raw','info','opt')
 % load('N200_Forward_scattered.mat');
 
 %Load the reference model horizons.

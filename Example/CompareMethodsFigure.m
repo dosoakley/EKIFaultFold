@@ -20,7 +20,7 @@ for iM = 1:length(methods)
     for iF = 1:length(folders)
         for jN = 1:length(Nvals)
             %Load the data.
-            load(['.\',folders{iF},'\N',num2str(Nvals(jN)),'_',methods{iM},'.mat'],'params_final_raw','info')
+            load(['./',folders{iF},'/N',num2str(Nvals(jN)),'_',methods{iM},'.mat'],'params_final_raw','info')
             dummy_param_final = params_final_raw(end,:);
             dummy_mean_final(iM,iF,jN) = mean(dummy_param_final);
             dummy_std_final(iM,iF,jN) = std(dummy_param_final);

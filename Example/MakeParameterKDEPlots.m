@@ -22,7 +22,7 @@ true_vals = [70,55,1100,300,250,0.6,700,1000,500];
 mins = [60,40,1000,100,50,0.0,100,250,250];
 maxs = [80,65,1200,400,500,1.0,1500,1500,1500];
 
-load(['.\',folder,'\N',num2str(N),'_Forward.mat'],'params_initial_raw','params_final_raw','info')
+load(['./',folder,'/N',num2str(N),'_Forward.mat'],'params_initial_raw','params_final_raw','info')
 % load('N200_Forward_scattered.mat');
 gen_params_forward = zeros(info.nparams.general,N);
 gen_params_forward_prior = zeros(info.nparams.general,N);
@@ -35,7 +35,7 @@ end
 info_forward = info;
 clear params_final_raw info
 
-load(['.\',folder,'\N',num2str(N),'_Restoration.mat'],'params_initial_raw','params_final_raw','info')
+load(['./',folder,'/N',num2str(N),'_Restoration.mat'],'params_initial_raw','params_final_raw','info')
 % load('N200_Restoration_scattered.mat');
 gen_params_restoration = zeros(info.nparams.general,N);
 gen_params_restoration_prior = zeros(info.nparams.general,N);

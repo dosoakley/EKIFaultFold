@@ -10,9 +10,9 @@ opt.infl = true; %If true, use covariance inflation.
 opt.nz_infl = 100; %Number of dummy parameters for determining inflation factor. Use only if infl is true.
 opt.persistent_z = true;
 opt.load_inflation_z = true;
-opt.inflation_z_file = ['.\PriorEnsembles\N',num2str(opt.N),'_Restoration'];
+opt.inflation_z_file = ['./PriorEnsembles/N',num2str(opt.N),'_Restoration'];
 opt.load_boot_inds = true;
-opt.boot_inds_file = ['.\PriorEnsembles\N',num2str(opt.N),'_Restoration'];
+opt.boot_inds_file = ['./PriorEnsembles/N',num2str(opt.N),'_Restoration'];
 opt.algorithm = 'subspace'; %Options are 'exact', 'subspace', or 'lowrank'.
 opt.Nthreads = 20; %Number of threads to use for parallel processing.
 
@@ -26,13 +26,13 @@ opt.n_fault_blocks = 2; %Number of fault blocks. (Only used for restoration.
 opt.nfaults = 1; %Number of faults in the model.
 
 %Define paths tothe reference model and the data.
-opt.data_path = '.\ForwardModel\DataSparse';
+opt.data_path = './ForwardModel/DataSparse';
 opt.ref_model_path = 'ReferenceModel_Deformed_Test6.mat';
 
 %Determine whether the prior ensemble will be loaded from a file or
 %generated automatically.
 opt.priors_from_file = true;
-opt.prior_path = ['.\PriorEnsembles\N',num2str(opt.N),'_Restoration'];
+opt.prior_path = ['./PriorEnsembles/N',num2str(opt.N),'_Restoration'];
 opt.rlzts_from_file = true;
 opt.rlzts_path = 'SparseDataRlzts.mat';
 

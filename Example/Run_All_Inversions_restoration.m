@@ -23,10 +23,10 @@ for i = 1:4
         opt.infl = infl(i);
         opt.boot = boot(i);
         opt.N = N(j);
-        opt.inflation_z_file = ['.\PriorEnsembles\N',num2str(opt.N),'_',method];
-        opt.boot_inds_file = ['.\PriorEnsembles\N',num2str(opt.N),'_',method];
-        opt.prior_path = ['.\PriorEnsembles\N',num2str(opt.N),'_',method];
-        opt.rlzts_path = ['.\PriorEnsembles\N',num2str(opt.N),'_',method];
+        opt.inflation_z_file = ['./PriorEnsembles/N',num2str(opt.N),'_',method];
+        opt.boot_inds_file = ['./PriorEnsembles/N',num2str(opt.N),'_',method];
+        opt.prior_path = ['./PriorEnsembles/N',num2str(opt.N),'_',method];
+        opt.rlzts_path = ['./PriorEnsembles/N',num2str(opt.N),'_',method];
         disp(['Starting',folder_names{i},'/N',num2str(N(j))])
         [params_initial_raw,params_final_raw,info] = RunEKI(opt); %Run the inversion.
         filename = [folder_names{i},'/N',num2str(N(j)),'_',method,'.mat'];

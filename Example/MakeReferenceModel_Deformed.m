@@ -30,7 +30,7 @@ horiz_ref.y = cell(1,nhorizons);
 horiz_ref.z = cell(1,nhorizons);
 horiz_ref.FaultBlock = cell(1,nhorizons);
 horiz_ref.active = cell(1,nhorizons);
-filename = '.\ForwardModel\horizons.mat';
+filename = './ForwardModel/horizons.mat';
 load(filename);
 for i = 1:nhorizons
     horiz_ref.x{i} = horizons{i}(1,:)';
