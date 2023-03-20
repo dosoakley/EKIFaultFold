@@ -400,7 +400,8 @@ if opt.fit_disp
     histogram(gen_params_final(ind_range,:),info.gen_param_mins(ind_range):50:info.gen_param_maxs(ind_range));
     hold off
     legend('Initial','Final')
-    title('Range')
+%     title('Range')
+    title('Reverse Drag Radius')
 end
 
 %Plot histograms of the fault maximum displacement.
