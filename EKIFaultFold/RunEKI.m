@@ -118,7 +118,7 @@ if opt.fault_points_data
     Gamma_d_fault = [];
     info.ndata.fault = 0;
     for i = 1:opt.nfaults
-        file = fopen([opt.data_path,'\',info.faults_ref(i).name,'_Data.txt']);
+        file = fopen([opt.data_path,'/',info.faults_ref(i).name,'_Data.txt']);
         fault_data = [fault_data;textscan(file,'%f%f%f')];
         npts_fault = length(fault_data{i,1});
         if opt.correlated_data
@@ -154,7 +154,7 @@ if opt.horizon_points_data
     horiz_data_pts = [];
     Gamma_d_horiz = [];
     for i = 1:opt.nhorizons
-        file = fopen([opt.data_path,'\',opt.horizon_names{i},'_Data.txt']);
+        file = fopen([opt.data_path,'/',opt.horizon_names{i},'_Data.txt']);
         horizon_data = textscan(file,'%f%f%f');
         [x,y,z] = deal(horizon_data{1},horizon_data{2},horizon_data{3});
         mask = (x>opt.xmin & x<opt.xmax & y>opt.ymin & y<opt.ymax);
