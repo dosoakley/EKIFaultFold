@@ -68,9 +68,9 @@ while (n<maxit)
     %Calculate alpha.
     Phi = zeros(1,N);
     parfor (j = 1:N,options.Nthreads)
-        Phi(j) = 0.5*sum(Gamma_inv*(data-G(:,j)).^2); %Eqn 13. Equivalent to 0.5*sum((Gamma^-0.5*(data-G(:,j))).^2)
-        %This equation could also be written, as in Ma et al. (2017) as
-        %0.5*(data-G(:,j))'*Gamma_inv*(data-G(:,j)).
+        Phi(j) = 0.5*(data-G(:,j))' * Gamma_inv * (data-G(:,j))
+        %The equation used to calculate the least-squares misfit term, Phi, is Eqn. 13 of Ma et al. (2017).
+        %This is (I am pretty sure) the same Eqn. 3 of Iglesias and Yang (2021), but is an easier form to understand and implement.
     end
     alpha = 1/(min(max(M/(2*mean(Phi)),sqrt(M/(2*var(Phi)))),1-t)); %Eqn. 14
     %If using inflation, make the vector of white noise to be used for determining the inflation factor.
@@ -250,6 +250,6 @@ Sigma0Plus = sparse(1:p,1:p,1./sigma(1:p),N,M);
 X0 = Sigma0Plus*U0'*sqrt(alpha)*E;
 [U1,Sigma1,~] = svd(X0);
 X1 = U0*Sigma0Plus'*U1;
-Cplus = X1/(eye(N)+Sigma1.^2)*X1'; %Since Sigma1 is a diagonal matrix, Sigma1^2 or Sigma1.^2 should be the same. .^2 is probably faster.
+Cplus = (X1/(eye(N)+Sigma1.^2)*X1')/(N-1); %Since Sigma1 is a diagonal matrix, Sigma1^2 or Sigma1.^2 should be the same. .^2 is probably faster.
 K = (1/(N-1))*(params-mean(params,2))*((G-mean(G,2))'*Cplus); %This is equivalent to CnuG*Cplus but faster.
 end
