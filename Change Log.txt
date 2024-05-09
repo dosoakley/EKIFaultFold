@@ -1,0 +1,7 @@
+2024/05/08
+I fixed two errors in EKI_DMC.m.
+The situations in which these errors occur are not included in any of the models shown in the paper, so nothing in the paper was affected.
+1) The equation I had for calculationg Phi(j) on line 71 was previously only correct if Gamma is a diagonal matrix.
+I have now fixed this.
+2) In the calculation of Cplus on line 253, in the KalmanGain_sub_low function, I divided this equation by (N-1).
+This is done because C in Evensen (2004) is actually (N-1) times the (CnGG+alpha*Gamma) term that I need to take the inverse of, so I need to divide Cplus by (N-1) to actually get (CnGG+alpha*Gamma).
